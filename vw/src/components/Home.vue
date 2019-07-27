@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="footer">
-      <a  v-for="(item, index) in footBtns" :key="index" :href="item.url" >
+      <a  v-for="(item, index) in footBtns" :key="index" @click="$router.push(item.url)" >
         <i :class="item.class" aria-hidden="true"></i>
         <span>{{item.title}}</span> 
       </a>
@@ -32,11 +32,11 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'home',
   data () {
     return {
       footBtns:[
-        {title:'联系人' , url:'/msg', class:'fa fa-user'},
+        {title:'联系人' , url:'/banner', class:'fa fa-user'},
         {title:'电话' , url:'/msg', class:'fa fa-phone'},
         {title:'消息' , url:'/msg', class:'fa fa-commenting-o'},
         {title:'音乐' , url:'/msg', class:'fa fa-music'},
@@ -45,7 +45,7 @@ export default {
     }
   },
   mounted(){
-    this.$getCss();
+    //this.$getCss();
   }
 }
 </script>
@@ -148,7 +148,7 @@ export default {
 
   .info span.title{font-size: 28px; color: black;}
   .info span.price{font-size: 24px; color:red; font-weight: bold;}
-  .info span.other{font-size: 24px; color:#bcbcbc;}
+  .info span.other{font-size: 24px; color:#bcbcbc; }
 
 
 .footer{
